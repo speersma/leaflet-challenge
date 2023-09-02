@@ -21,6 +21,7 @@ function getColor(depth) {
     return "rgb(" + r + "," + g + "," + b + ")";
 }
 
+
 // func to convert unix time to normal time
 function formatTime(timestamp) {
     var date = new Date(timestamp);
@@ -73,7 +74,7 @@ d3.json(url).then(function(response) {
 
         // placing map markers
         L.circleMarker([coordinates[1], coordinates[0]], {
-            radius : Math.sqrt(mag) * 3, 
+            radius : mag**2, 
             fillColor  : color,
             color: color,
             opacity: 1,
